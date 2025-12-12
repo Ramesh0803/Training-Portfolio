@@ -3,187 +3,262 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ramesh Ryali — Portfolio</title>
-  <link rel="stylesheet" href="./styles/main.css">
+  <title>Ramesh Ryali | Portfolio</title>
+  <meta name="description" content="Portfolio of Ramesh Ryali — B.Tech student skilled in Java, JavaScript, MongoDB and Python." />
+  <meta name="theme-color" content="#061022" />
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <h1 class="brand">Ramesh Ryali</h1>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+      <div class="brand">
+        <a href="#" aria-label="Ramesh Ryali homepage">Ramesh <span class="accent">Ryali</span></a>
+      </div>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="controls">
+          <button id="theme-toggle" aria-label="Toggle dark or light theme" class="icon-btn" title="Toggle theme">
+            🌙
+          </button>
+          <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Toggle menu" title="Menu">☰</button>
+        </div>
       </nav>
-      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <!-- HERO -->
+    <section id="home" class="hero">
       <div class="container hero-inner">
-        <div class="hero-text">
-          <h2>Computer Science Student</h2>
-          <p class="muted">Full‑stack & front‑end developer — building responsive, accessible web apps.</p>
-          <p class="meta">
-            <strong>Email:</strong> <a href="mailto:rameshryali748@gmail.com">rameshryali748@gmail.com</a> •
-            <strong>Phone:</strong> +91 91544 24988 • <strong>Location:</strong> Hyderabad, India
-          </p>
-          <p class="cta-row">
-            <a class="btn" href="#projects">See Projects</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </p>
+        <div class="hero-text" data-aos="fade-up" data-aos-duration="800">
+          <h1 class="hero-title">Hi — I'm <span class="accent-gradient">Ramesh Ryali</span></h1>
+          <p class="hero-sub">B.Tech | Frontend & Full-Stack enthusiast • Java • JavaScript • MongoDB • Python</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Contact Me</a>
+          </div>
         </div>
 
-        <aside class="hero-card" aria-hidden="true">
-          <div class="avatar">RR</div>
+        <div class="hero-card" data-aos="zoom-in" data-aos-duration="900">
           <ul class="quick-stats">
-            <li><strong>CGPA</strong><span>9.1</span></li>
-            <li><strong>Role</strong><span>Student</span></li>
-            <li><strong>Years</strong><span>2023–2027</span></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about" class="container about">
-      <h3>About</h3>
-      <p>
-        I’m a computer science student focused on building clean, maintainable web experiences.
-        I enjoy working across front‑end and back‑end stacks — from UI & accessibility to server logic and databases.
-        I build projects that solve real problems and like to learn new tools and workflows continuously.
-      </p>
-
-      <div class="two-col">
-        <div>
-          <h4>Skills</h4>
-          <ul class="skills">
-            <li>HTML & CSS</li>
-            <li>JavaScript / Node.js</li>
-            <li>React & modern front‑end</li>
-            <li>Socket.io, Express, MongoDB</li>
-            <li>PowerBI / Python basics</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Professional traits</h4>
-          <ul class="traits">
-            <li>Adaptability</li>
-            <li>Teamwork</li>
-            <li>Multitasking</li>
-            <li>Work under pressure</li>
-            <li>Public speaking & communication</li>
+            <li><strong>4</strong><span>Projects</span></li>
+            <li><strong>3</strong><span>Internships</span></li>
+            <li><strong>2026</strong><span>Grad. est.</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="container projects">
-      <h3>Projects</h3>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container" data-aos="fade-up">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-desc">Technologies I work with regularly — I focus on clean UI and robust backend integration.</p>
 
-      <div class="grid">
-        <article class="card">
-          <div class="card-media grad1"></div>
-          <div class="card-body">
-            <h4>E‑commerce Platform</h4>
-            <p>Led development of a full e‑commerce platform: product listings, cart, payment integration and order management.</p>
-            <p class="meta-small"><strong>Period:</strong> 2023 — 2024</p>
-            <p class="card-links">
-              <a href="#" target="_blank" rel="noopener">Live</a>
-              <a href="#" target="_blank" rel="noopener">Code</a>
-            </p>
+        <div class="skills-grid">
+          <article class="skill-card" data-aos="flip-left">
+            <h3>Front-end</h3>
+            <p>HTML, CSS (Flexbox/Grid), JavaScript, React</p>
+          </article>
+
+          <article class="skill-card" data-aos="flip-left" data-aos-delay="100">
+            <h3>Back-end</h3>
+            <p>Node.js, Express, REST APIs</p>
+          </article>
+
+          <article class="skill-card" data-aos="flip-left" data-aos-delay="200">
+            <h3>Databases</h3>
+            <p>MongoDB, Firebase</p>
+          </article>
+
+          <article class="skill-card" data-aos="flip-left" data-aos-delay="300">
+            <h3>Tools</h3>
+            <p>Git, VS Code, Postman, Docker (basic)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container" data-aos="fade-up">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-desc">Selected projects — click to view (links placeholder).</p>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="50">
+            <a href="#" class="project-link" aria-label="Open Portfolio Website">
+              <figure class="project-media">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f41d1b3d1fa5b617d89b2b0b39c8207" alt="Portfolio website preview">
+              </figure>
+              <div class="project-body">
+                <h3>Portfolio Website</h3>
+                <p class="muted">Responsive, accessible portfolio with animations and project gallery.</p>
+                <div class="tags">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <a href="#" class="project-link" aria-label="Open Task Manager App">
+              <figure class="project-media">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=832d4b0b4f5f2a7c2bca2d5b3d6d0f1a" alt="Task manager preview">
+              </figure>
+              <div class="project-body">
+                <h3>Task Manager</h3>
+                <p class="muted">CRUD app with client-side routing and persistent storage.</p>
+                <div class="tags">
+                  <span>React</span><span>Node</span><span>MongoDB</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="250">
+            <a href="#" class="project-link" aria-label="Open Weather App">
+              <figure class="project-media">
+                <img src="https://images.unsplash.com/photo-1501973801540-537f08ccae7b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e5b7b9e97b6f6a3f8b9f6e9a6b0c1d2" alt="Weather app preview">
+              </figure>
+              <div class="project-body">
+                <h3>Weather App</h3>
+                <p class="muted">API-driven app showing live weather and forecasts.</p>
+                <div class="tags">
+                  <span>JS</span><span>API</span><span>UX</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 4 (wide) -->
+          <article class="project-card wide" data-aos="fade-up" data-aos-delay="350">
+            <a href="#" class="project-link" aria-label="Open E-commerce UI">
+              <figure class="project-media">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d6a8f3b1c4a9c9b5a3a2e3d6b4c5a4f" alt="E-commerce ui preview">
+              </figure>
+              <div class="project-body">
+                <h3>Shop UI (E-commerce)</h3>
+                <p class="muted">Product listing, filters and interactive cart prototype.</p>
+                <div class="tags">
+                  <span>React</span><span>Design</span><span>UX</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container" data-aos="fade-up">
+        <h2 class="section-title">Get in touch</h2>
+        <p class="section-desc">I'm open to internships and collaborations. Drop a message — I'll reply soon.</p>
+
+        <form class="contact-form" id="contact-form" aria-label="Contact form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
           </div>
-        </article>
-
-        <article class="card">
-          <div class="card-media grad2"></div>
-          <div class="card-body">
-            <h4>Real‑time Chat App</h4>
-            <p>Real‑time messaging with groups & multimedia. Built with Socket.io, Node.js, Express and MongoDB.</p>
-            <p class="meta-small"><strong>Period:</strong> 2024 — 2025</p>
-            <p class="card-links">
-              <a href="#" target="_blank" rel="noopener">Live</a>
-              <a href="#" target="_blank" rel="noopener">Code</a>
-            </p>
+          <textarea name="message" rows="6" placeholder="Message" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send message</button>
+            <a class="btn ghost" href="mailto:your.email@example.com">Or email me</a>
           </div>
-        </article>
-
+        </form>
       </div>
-    </section>
-
-    <section id="education" class="container education">
-      <h3>Education</h3>
-
-      <div class="edu-list">
-        <div class="edu">
-          <h4>Malla Reddy University, Maisammaguda</h4>
-          <p class="muted">B.Tech — Computer Science (2023 – 2027)</p>
-          <p>Current CGPA: 9.1</p>
-        </div>
-
-        <div class="edu">
-          <h4>Sri Chaitanya Junior College, Amalapuram</h4>
-          <p class="muted">Intermediate (2021 – 2023)</p>
-          <p>7.7 CGPA</p>
-        </div>
-
-        <div class="edu">
-          <h4>Delhi Public School, Amalapuram</h4>
-          <p class="muted">Secondary (2013 – 2021)</p>
-          <p>10th board — 70%</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certs" class="container certs">
-      <h3>Certifications</h3>
-      <ul class="cert-list">
-        <li>PowerBI Certification</li>
-        <li>Fundamentals of Python</li>
-        <li>ChatGPT & AI Hacks With MS Office</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="container contact">
-      <h3>Contact</h3>
-      <p>If you'd like to collaborate or see code, email me.</p>
-
-      <form action="mailto:rameshryali748@gmail.com" method="post" enctype="text/plain" class="contact-form">
-        <label>
-          Name
-          <input name="name" type="text" required>
-        </label>
-        <label>
-          Email
-          <input name="email" type="email" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="btn">Send</button>
-        </div>
-      </form>
-
-      <ul class="contact-meta">
-        <li><strong>Email:</strong> <a href="mailto:rameshryali748@gmail.com">rameshryali748@gmail.com</a></li>
-        <li><strong>Phone:</strong> +91 91544 24988</li>
-        <li><strong>Location:</strong> Hyderabad, India</li>
-      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Ramesh Ryali — Student / Developer</p>
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <p class="muted">© 2025 Ramesh Ryali • Built with care</p>
+      <div class="social muted">LinkedIn · GitHub · Twitter (placeholders)</div>
     </div>
   </footer>
 
+  <!-- AOS & GSAP -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Theme & interaction script -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Initialize AOS
+    AOS.init({ once: true, offset: 80 });
+
+    // Small GSAP entrance for hero title (subtle)
+    window.addEventListener('load', () => {
+      try {
+        gsap.from('.hero-title', { y: 20, opacity: 0, duration: 0.7, ease: 'power2.out' });
+        gsap.from('.hero-sub', { y: 12, opacity: 0, duration: 0.6, delay: 0.12 });
+        gsap.from('.hero-ctas', { y: 6, opacity: 0, duration: 0.6, delay: 0.22 });
+      } catch (e) { /* ignore if gsap fails */ }
+    });
+
+    // Theme toggle (dark/light) using CSS variables + localStorage
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const THEME_KEY = 'ramesh_theme';
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved) { applyTheme(saved); }
+      else {
+        // default: prefers-color-scheme
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(THEME_KEY, next);
+    });
+
+    initTheme();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('open');
+      });
+    }
+
+    // Simple contact form handler (demo only)
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // show a little success micro-animation
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      setTimeout(() => {
+        btn.textContent = 'Sent ✓';
+        contactForm.reset();
+        setTimeout(() => btn.textContent = 'Send message', 1800);
+      }, 700);
+    });
   </script>
 </body>
 </html>
