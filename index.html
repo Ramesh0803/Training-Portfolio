@@ -5,20 +5,107 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ramesh Ryali | Portfolio</title>
   <meta name="description" content="Portfolio of Ramesh Ryali — B.Tech student skilled in Java, JavaScript, MongoDB and Python." />
-  <meta name="theme-color" content="#061022" />
-  <!-- AOS (scroll animations) -->
+  <meta name="theme-color" content="#010d18" />
+
+  <!-- AOS for animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- main stylesheet -->
-  <link rel="stylesheet" href="main.css" />
+
+  <!-- Inline CSS -->
+  <style>
+    :root{
+      --bg: #010d18;
+      --bg2: #001522;
+      --card: #00131f;
+      --muted: #7aa4c7;
+      --text: #d6f3ff;
+      --accent-1: #00eaff;
+      --accent-2: #0077ff;
+      --radius: 12px;
+      --container: 1200px;
+      --shadow: 0 8px 30px rgba(0,140,255,0.25);
+    }
+    :root[data-theme="light"]{
+      --bg: #0b1928;
+      --bg2: #122839;
+      --card: #0d2233;
+      --muted: #9fc0d7;
+      --text: #e0f8ff;
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;font-family:Inter,ui-sans-serif,system-ui;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 70%);color:var(--text);}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--container);margin:0 auto;padding:28px 20px}
+
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(0,20,40,0.55);backdrop-filter: blur(12px);border-bottom:1px solid rgba(0,200,255,0.08);}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;}
+    .brand a{font-size:22px;font-weight:700;}
+    .brand .accent{color:var(--accent-1)}
+    .nav-list{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
+    .nav-list a{padding:10px 14px;border-radius:10px;color:var(--muted);transition:0.25s;}
+    .nav-list a:hover{background:linear-gradient(90deg,rgba(0,195,255,0.12),rgba(0,119,255,0.12));color:var(--text);}
+    .icon-btn{padding:8px 12px;border-radius:8px;background:rgba(0,200,255,0.06);color:var(--muted);border:1px solid rgba(0,200,255,0.10);cursor:pointer;transition:0.25s;}
+    .icon-btn:hover{color:var(--text);background:rgba(0,200,255,0.18);}
+    .mobile-only{display:none}
+    @media (max-width:880px){
+      .mobile-only{display:inline-flex;}
+      .nav-list{
+        position:fixed;top:70px;right:20px;flex-direction:column;padding:14px;border-radius:12px;background:rgba(0,20,40,0.9);border:1px solid rgba(0,200,255,0.1);box-shadow:var(--shadow);transform:translateY(-8px);opacity:0;pointer-events:none;transition:0.22s;
+      }
+      .nav-list.open{transform:none;opacity:1;pointer-events:auto;}
+    }
+
+    /* Hero */
+    .hero{min-height:72vh;display:flex;align-items:center;}
+    .hero-inner{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:center;}
+    @media (max-width:920px){.hero-inner{grid-template-columns:1fr;}}
+    .hero-title{font-size:clamp(30px,5vw,50px);margin:0;}
+    .accent-gradient{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;color:transparent;}
+    .hero-sub{margin-top:10px;color:var(--muted);}
+    .hero-ctas{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{padding:12px 18px;border-radius:10px;border:1px solid rgba(0,140,255,0.18);font-weight:600;cursor:pointer;transition:0.25s;}
+    .btn.primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#001220;box-shadow:0 10px 30px rgba(0,150,255,0.20);}
+    .btn.ghost{background:rgba(0,120,255,0.05);color:var(--text);}
+
+    /* Hero Card */
+    .hero-card{background:rgba(0,120,255,0.05);border-radius:12px;padding:20px;border:1px solid rgba(0,140,255,0.15);backdrop-filter: blur(8px);}
+    .quick-stats{display:flex;gap:25px;list-style:none;padding:0;margin:0;}
+    .quick-stats strong{font-size:22px;color:var(--accent-1);}
+
+    /* Sections */
+    .section{padding:70px 0}
+    .section-title{font-size:26px;margin:0 0 8px}
+    .section-desc{color:var(--muted);margin-bottom:20px}
+
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+    .skill-card{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(0,200,255,0.08);box-shadow:var(--shadow);transition:0.25s;}
+    .skill-card:hover{transform:translateY(-6px);background:#001a27;}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+    .project-card{background:var(--card);border-radius:14px;border:1px solid rgba(0,200,255,0.10);overflow:hidden;transition:0.28s;box-shadow:var(--shadow);}
+    .project-card:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(0,170,255,0.35);}
+    .project-media img{width:100%;height:220px;object-fit:cover;transition:0.5s;}
+    .project-card:hover img{transform:scale(1.05);}
+    .project-body{padding:14px}
+    .tags span{background:rgba(0,150,255,0.08);padding:5px 8px;border-radius:8px;color:var(--muted);font-size:12px;}
+
+    /* Contact */
+    input,textarea{background:rgba(0,100,150,0.08);border:1px solid rgba(0,140,255,0.15);color:var(--text);padding:12px;border-radius:10px;width:100%;margin-top:10px;}
+
+    /* Footer */
+    .site-footer{padding:24px 0;border-top:1px solid rgba(0,200,255,0.08);}
+  </style>
 </head>
 <body>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <a href="#" aria-label="Ramesh Ryali homepage">Ramesh <span class="accent">Ryali</span></a>
+        <a href="#">Ramesh <span class="accent">Ryali</span></a>
       </div>
-
-      <nav class="nav" id="nav">
+      <nav class="nav">
         <ul class="nav-list" id="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -26,29 +113,26 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="controls">
-          <button id="theme-toggle" aria-label="Toggle dark or light theme" class="icon-btn" title="Toggle theme">
-            🌙
-          </button>
-          <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Toggle menu" title="Menu">☰</button>
+          <button id="theme-toggle" class="icon-btn">🌙</button>
+          <button id="menu-toggle" class="icon-btn mobile-only">☰</button>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- Hero -->
     <section id="home" class="hero">
       <div class="container hero-inner">
-        <div class="hero-text" data-aos="fade-up" data-aos-duration="800">
+        <div class="hero-text" data-aos="fade-up">
           <h1 class="hero-title">Hi — I'm <span class="accent-gradient">Ramesh Ryali</span></h1>
-          <p class="hero-sub">B.Tech | Frontend & Full-Stack enthusiast • Java • JavaScript • MongoDB • Python</p>
+          <p class="hero-sub">B.Tech | Frontend & Full-Stack • Java • JS • MongoDB • Python</p>
           <div class="hero-ctas">
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn ghost" href="#contact">Contact Me</a>
           </div>
         </div>
-
-        <div class="hero-card" data-aos="zoom-in" data-aos-duration="900">
+        <div class="hero-card" data-aos="zoom-in">
           <ul class="quick-stats">
             <li><strong>4</strong><span>Projects</span></li>
             <li><strong>3</strong><span>Internships</span></li>
@@ -58,117 +142,47 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- Skills -->
     <section id="skills" class="section">
       <div class="container" data-aos="fade-up">
         <h2 class="section-title">Skills</h2>
-        <p class="section-desc">Technologies I work with regularly — I focus on clean UI and robust backend integration.</p>
-
+        <p class="section-desc">Technologies I work with — clean UI & robust backend.</p>
         <div class="skills-grid">
           <article class="skill-card" data-aos="flip-left">
-            <h3>Front-end</h3>
-            <p>HTML, CSS (Flexbox/Grid), JavaScript, React</p>
+            <h3>Front-end</h3><p>HTML, CSS, JS, React</p>
           </article>
-
           <article class="skill-card" data-aos="flip-left" data-aos-delay="100">
-            <h3>Back-end</h3>
-            <p>Node.js, Express, REST APIs</p>
+            <h3>Back-end</h3><p>Node.js, Express, REST APIs</p>
           </article>
-
           <article class="skill-card" data-aos="flip-left" data-aos-delay="200">
-            <h3>Databases</h3>
-            <p>MongoDB, Firebase</p>
+            <h3>Databases</h3><p>MongoDB, Firebase</p>
           </article>
-
           <article class="skill-card" data-aos="flip-left" data-aos-delay="300">
-            <h3>Tools</h3>
-            <p>Git, VS Code, Postman, Docker (basic)</p>
+            <h3>Tools</h3><p>Git, VS Code, Postman, Docker</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- Projects -->
     <section id="projects" class="section">
       <div class="container" data-aos="fade-up">
         <h2 class="section-title">Projects</h2>
-        <p class="section-desc">Selected projects — click to view (links placeholder).</p>
-
         <div class="projects-grid">
-          <!-- Project 1 -->
           <article class="project-card" data-aos="fade-up" data-aos-delay="50">
-            <a href="#" class="project-link" aria-label="Open Portfolio Website">
-              <figure class="project-media">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f41d1b3d1fa5b617d89b2b0b39c8207" alt="Portfolio website preview">
-              </figure>
-              <div class="project-body">
-                <h3>Portfolio Website</h3>
-                <p class="muted">Responsive, accessible portfolio with animations and project gallery.</p>
-                <div class="tags">
-                  <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="project-card" data-aos="fade-up" data-aos-delay="150">
-            <a href="#" class="project-link" aria-label="Open Task Manager App">
-              <figure class="project-media">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=832d4b0b4f5f2a7c2bca2d5b3d6d0f1a" alt="Task manager preview">
-              </figure>
-              <div class="project-body">
-                <h3>Task Manager</h3>
-                <p class="muted">CRUD app with client-side routing and persistent storage.</p>
-                <div class="tags">
-                  <span>React</span><span>Node</span><span>MongoDB</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card" data-aos="fade-up" data-aos-delay="250">
-            <a href="#" class="project-link" aria-label="Open Weather App">
-              <figure class="project-media">
-                <img src="https://images.unsplash.com/photo-1501973801540-537f08ccae7b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e5b7b9e97b6f6a3f8b9f6e9a6b0c1d2" alt="Weather app preview">
-              </figure>
-              <div class="project-body">
-                <h3>Weather App</h3>
-                <p class="muted">API-driven app showing live weather and forecasts.</p>
-                <div class="tags">
-                  <span>JS</span><span>API</span><span>UX</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Project 4 (wide) -->
-          <article class="project-card wide" data-aos="fade-up" data-aos-delay="350">
-            <a href="#" class="project-link" aria-label="Open E-commerce UI">
-              <figure class="project-media">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d6a8f3b1c4a9c9b5a3a2e3d6b4c5a4f" alt="E-commerce ui preview">
-              </figure>
-              <div class="project-body">
-                <h3>Shop UI (E-commerce)</h3>
-                <p class="muted">Product listing, filters and interactive cart prototype.</p>
-                <div class="tags">
-                  <span>React</span><span>Design</span><span>UX</span>
-                </div>
-              </div>
-            </a>
+            <a class="project-link" href="#"><figure class="project-media"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400" alt="Portfolio preview"></figure>
+            <div class="project-body"><h3>Portfolio Website</h3><p class="muted">Responsive portfolio with animations.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div></div></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact -->
     <section id="contact" class="section">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
         <h2 class="section-title">Get in touch</h2>
-        <p class="section-desc">I'm open to internships and collaborations. Drop a message — I'll reply soon.</p>
-
-        <form class="contact-form" id="contact-form" aria-label="Contact form">
+        <form class="contact-form" id="contact-form">
           <div class="form-row">
             <input type="text" name="name" placeholder="Your name" required>
             <input type="email" name="email" placeholder="Your email" required>
@@ -183,82 +197,29 @@
     </section>
   </main>
 
-  <footer class="site-footer" data-aos="fade-up">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="muted">© 2025 Ramesh Ryali • Built with care</p>
-      <div class="social muted">LinkedIn · GitHub · Twitter (placeholders)</div>
     </div>
   </footer>
 
-  <!-- AOS & GSAP -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-  <!-- Theme & interaction script -->
   <script>
-    // Initialize AOS
     AOS.init({ once: true, offset: 80 });
-
-    // Small GSAP entrance for hero title (subtle)
-    window.addEventListener('load', () => {
-      try {
-        gsap.from('.hero-title', { y: 20, opacity: 0, duration: 0.7, ease: 'power2.out' });
-        gsap.from('.hero-sub', { y: 12, opacity: 0, duration: 0.6, delay: 0.12 });
-        gsap.from('.hero-ctas', { y: 6, opacity: 0, duration: 0.6, delay: 0.22 });
-      } catch (e) { /* ignore if gsap fails */ }
-    });
-
-    // Theme toggle (dark/light) using CSS variables + localStorage
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-    const THEME_KEY = 'ramesh_theme';
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
-    }
-
-    function initTheme() {
-      const saved = localStorage.getItem(THEME_KEY);
-      if (saved) { applyTheme(saved); }
-      else {
-        // default: prefers-color-scheme
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(prefersDark ? 'dark' : 'light');
-      }
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem(THEME_KEY, next);
-    });
-
+    const themeToggle=document.getElementById('theme-toggle');
+    const root=document.documentElement;
+    const THEME_KEY='ramesh_theme';
+    function applyTheme(theme){root.setAttribute('data-theme',theme);themeToggle.textContent=theme==='dark'?'🌙':'☀️';}
+    function initTheme(){const saved=localStorage.getItem(THEME_KEY);if(saved){applyTheme(saved);}else{const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;applyTheme(prefersDark?'dark':'light');}}
+    themeToggle.addEventListener('click',()=>{const current=root.getAttribute('data-theme')==='dark'?'dark':'light';const next=current==='dark'?'light':'dark';applyTheme(next);localStorage.setItem(THEME_KEY,next);});
     initTheme();
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navList = document.getElementById('nav-list');
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('open');
-      });
-    }
-
-    // Simple contact form handler (demo only)
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // show a little success micro-animation
-      const btn = contactForm.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending...';
-      setTimeout(() => {
-        btn.textContent = 'Sent ✓';
-        contactForm.reset();
-        setTimeout(() => btn.textContent = 'Send message', 1800);
-      }, 700);
-    });
+    const menuToggle=document.getElementById('menu-toggle');
+    const navList=document.getElementById('nav-list');
+    menuToggle?.addEventListener('click',()=>{navList.classList.toggle('open');});
+    const contactForm=document.getElementById('contact-form');
+    contactForm.addEventListener('submit',(e)=>{e.preventDefault();const btn=contactForm.querySelector('button[type="submit"]');btn.textContent='Sending...';setTimeout(()=>{btn.textContent='Sent ✓';contactForm.reset();setTimeout(()=>btn.textContent='Send message',1800);},700);});
   </script>
+
 </body>
 </html>
