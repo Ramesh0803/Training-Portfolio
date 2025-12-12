@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ramesh Ryali — Portfolio</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Ramesh Ryali</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Computer Science Student</h2>
+          <p class="muted">Full‑stack & front‑end developer — building responsive, accessible web apps.</p>
+          <p class="meta">
+            <strong>Email:</strong> <a href="mailto:rameshryali748@gmail.com">rameshryali748@gmail.com</a> •
+            <strong>Phone:</strong> +91 91544 24988 • <strong>Location:</strong> Hyderabad, India
+          </p>
+          <p class="cta-row">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-hidden="true">
+          <div class="avatar">RR</div>
+          <ul class="quick-stats">
+            <li><strong>CGPA</strong><span>9.1</span></li>
+            <li><strong>Role</strong><span>Student</span></li>
+            <li><strong>Years</strong><span>2023–2027</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About</h3>
+      <p>
+        I’m a computer science student focused on building clean, maintainable web experiences.
+        I enjoy working across front‑end and back‑end stacks — from UI & accessibility to server logic and databases.
+        I build projects that solve real problems and like to learn new tools and workflows continuously.
+      </p>
+
+      <div class="two-col">
+        <div>
+          <h4>Skills</h4>
+          <ul class="skills">
+            <li>HTML & CSS</li>
+            <li>JavaScript / Node.js</li>
+            <li>React & modern front‑end</li>
+            <li>Socket.io, Express, MongoDB</li>
+            <li>PowerBI / Python basics</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Professional traits</h4>
+          <ul class="traits">
+            <li>Adaptability</li>
+            <li>Teamwork</li>
+            <li>Multitasking</li>
+            <li>Work under pressure</li>
+            <li>Public speaking & communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h3>Projects</h3>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-media grad1"></div>
+          <div class="card-body">
+            <h4>E‑commerce Platform</h4>
+            <p>Led development of a full e‑commerce platform: product listings, cart, payment integration and order management.</p>
+            <p class="meta-small"><strong>Period:</strong> 2023 — 2024</p>
+            <p class="card-links">
+              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="#" target="_blank" rel="noopener">Code</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media grad2"></div>
+          <div class="card-body">
+            <h4>Real‑time Chat App</h4>
+            <p>Real‑time messaging with groups & multimedia. Built with Socket.io, Node.js, Express and MongoDB.</p>
+            <p class="meta-small"><strong>Period:</strong> 2024 — 2025</p>
+            <p class="card-links">
+              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="#" target="_blank" rel="noopener">Code</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="education" class="container education">
+      <h3>Education</h3>
+
+      <div class="edu-list">
+        <div class="edu">
+          <h4>Malla Reddy University, Maisammaguda</h4>
+          <p class="muted">B.Tech — Computer Science (2023 – 2027)</p>
+          <p>Current CGPA: 9.1</p>
+        </div>
+
+        <div class="edu">
+          <h4>Sri Chaitanya Junior College, Amalapuram</h4>
+          <p class="muted">Intermediate (2021 – 2023)</p>
+          <p>7.7 CGPA</p>
+        </div>
+
+        <div class="edu">
+          <h4>Delhi Public School, Amalapuram</h4>
+          <p class="muted">Secondary (2013 – 2021)</p>
+          <p>10th board — 70%</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certs" class="container certs">
+      <h3>Certifications</h3>
+      <ul class="cert-list">
+        <li>PowerBI Certification</li>
+        <li>Fundamentals of Python</li>
+        <li>ChatGPT & AI Hacks With MS Office</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
+      <p>If you'd like to collaborate or see code, email me.</p>
+
+      <form action="mailto:rameshryali748@gmail.com" method="post" enctype="text/plain" class="contact-form">
+        <label>
+          Name
+          <input name="name" type="text" required>
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Send</button>
+        </div>
+      </form>
+
+      <ul class="contact-meta">
+        <li><strong>Email:</strong> <a href="mailto:rameshryali748@gmail.com">rameshryali748@gmail.com</a></li>
+        <li><strong>Phone:</strong> +91 91544 24988</li>
+        <li><strong>Location:</strong> Hyderabad, India</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ramesh Ryali — Student / Developer</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
